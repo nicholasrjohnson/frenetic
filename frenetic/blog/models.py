@@ -16,6 +16,9 @@ class User(models.Model):
     created_date = models.DateTimeField('Date Created')
     edited_date = models.DateTimeField('Edited Date')
 
+    def __str__(self):
+        return self.username
+
 class Author(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     signature = models.CharField(max_length=100)
@@ -23,9 +26,12 @@ class Author(models.Model):
     def __str__(self):
         return self.signature
 
-    def __str__(self):
-        return self.username
 
+class CommentAuthor(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     title = models.CharField(max_length=500)
@@ -33,3 +39,11 @@ class Post(models.Model):
     pub_date = models.DateTimeField('Published Date')
     edited_date = models.DateTimeField('Edited Date')
     authors = models.ManyToManyField( Author )
+
+    def __str__(self):
+        return self.title
+
+class Comment(models.Model):
+    body = models.CharField(max_length=500)
+    timeDate = models.DateTimeField('Comment Date')
+    author = models.ForeignKey(CommentAuthor, on_delete=models.CASCADE)
