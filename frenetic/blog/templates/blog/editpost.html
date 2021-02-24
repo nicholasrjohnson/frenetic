@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+
+
+<html>
+    <head>
+       Edit the post 
+    </head>
+    <body>
+        <form action="/blog/postedited" method="post">
+            <label for="title">Title</title><br>
+            <input type="text" id="title" name="title" value="{{ post.title}}">
+            <textarea rows="50" cols="50" id="blog" name="name">{{ post.body }}</textarea>
+
+        </form>
+    </body>
+</html>

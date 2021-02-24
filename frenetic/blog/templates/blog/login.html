@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+</head>
+
+
+<body>
+
+Login
+
+<form action="{ urls 'blog:browse' }">
+
+    {% csrf_token %}
+    Login
+
+    <label for="username" value="Username"></label>
+    <input type="text" id="username"></input>
+    <label for="password" value="Password"></label>
+    <input type="text" id="password"></input>
+    <input type="submit" value="Submit"></input>
+
+
+</form>
+
+</body>
+
+
+</html>

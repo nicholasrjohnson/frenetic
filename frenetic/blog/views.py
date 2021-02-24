@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
+from django.views import generic
+from django.http import HttpResponseRedirect
 
-# Create your views here.
+from .models import Profile, User, Author, CommentAuthor, Post, Comment
 
 class IndexView():
     template_name = 'blog/index.html'
@@ -18,4 +21,8 @@ class ViewPostView():
     template_name = 'blog/viewpost.html'
 
 class EditPostView():
-    template_name = 'blog/viewpost.html'
+    template_name = 'blog/edit.html'
+
+class CommentView():
+    template_name = 'blog/comment.html' 
+

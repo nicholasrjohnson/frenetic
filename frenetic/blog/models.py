@@ -34,6 +34,7 @@ class CommentAuthor(models.Model):
         return self.name
 
 class Post(models.Model):
+    postNumber = models.IntegterField(primary_key=True)
     title = models.CharField(max_length=500)
     body = models.CharField(max_length=5000)
     pub_date = models.DateTimeField('Published Date')
