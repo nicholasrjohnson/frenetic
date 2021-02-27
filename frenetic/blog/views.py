@@ -26,3 +26,8 @@ class EditPostView():
 class CommentView():
     template_name = 'blog/comment.html' 
 
+class PostSubmittedView():
+    template_name = 'blog/postsubmitted.html'
+
+class PostEditedView():
+    template_name = 'blog/postedited.html'

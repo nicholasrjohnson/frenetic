@@ -9,7 +9,7 @@
 
     <body>
         
-        <form action="/addpost" method="post">
+        <form action="{ urls 'blog:postsubmitted' }" method="post">
             <label for="title">Blog title</label><br>
             <input type="text" id="title" name="title"><br>
             <textarea id="blogContent" name="blogContext" rows="50" cols="50">

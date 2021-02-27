@@ -10,16 +10,18 @@
         
        Blogs
 
-        <form action="{% urls 'blog:editpost' post.postNumber %}">
+        <form action="{ urls 'blog:viewpost' post.postNumber }" method="post">
             {% csrf_token %}
-
+"
             <select id="posts" name="posts" size={% "post.size %}">
                 {% for post in post.all %}
-                <option type="button" id="{{ post.postNumber }}" value="{{ post.postNumber }}">{{post.title}}</option>
+                <option type="button" name="selectedpost" id="{{ post.postNumber }}" value="{{ post.postNumber }}">{{post.title}}</option>
                 {% endfor %}
             </select>
 
             <input type="submit" value="View post"> 
+            <input type="submit" value="Edit Post"  formaction="{ urls 'blog:editpost' post.postNumber }">
+            <input type="submit" value="Add post" formaction="{ urls 'blog:addpost' 
         </form>
     </body>
 
